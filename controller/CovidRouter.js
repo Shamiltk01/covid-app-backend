@@ -18,6 +18,13 @@ router.get("/view",async(req,res)=>{
     res.json(data)
 })
 
+
+router.post("/search",async(req,res)=>{
+    let input=req.body
+    let result=await CovidModel.find(input)
+    res.json(result)
+})
+
 module.exports=router
 
 
